@@ -102,6 +102,7 @@ footer {
 .back-button {
   display: block;
   color: black;
+  background-color: #E17654;
   text-decoration: none;
   margin-left: 26px;
 }
@@ -199,7 +200,8 @@ footer {
 
 /*** VAN PAGES ***/
 .van-list-container {
-  padding-inline: 23px
+  padding-inline: 23px;
+  padding: 20px;
 }
 
 .van-list-filter-buttons {
@@ -221,7 +223,7 @@ footer {
 
 .van-tile a {
   color: #161616;
-  text-decoration: none;    
+  text-decoration: none;   
 }
 
 .van-tile img {
@@ -291,9 +293,11 @@ i[class*='van-type-'] {
   padding-inline: 27px;
 }
 
-.van-detail-container .back-button {
+.back-button {
   color: black;
+  padding: 10px;
   text-decoration: none;
+  border-radius: 10px;
 }
 
 .van-detail-container .back-button span {
@@ -334,6 +338,7 @@ i[class*='van-type-'] {
   background-color: #FF8C38;
   color: white;
   font-size: 1.125rem;
+  margin-bottom: 10px;
 }
 
 .host-nav {
@@ -523,6 +528,8 @@ i[class*='van-type-'] {
   border-radius: 6px;
   height: 55px;
   margin-top: 22px;
+  margin-bottom: 10px;
   color: white;
   font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
 }

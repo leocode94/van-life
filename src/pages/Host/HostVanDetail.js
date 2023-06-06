@@ -1,11 +1,10 @@
 import React from "react"
-import { useParams, Link, NavLink, Outlet } from "react-router-dom"
+import { Link, useParams, Outlet, NavLink } from "react-router-dom"
 
 export default function HostVanDetail() {
     const { id } = useParams()
     const [currentVan, setCurrentVan] = React.useState(null)
-
-    const activeStyles = {
+    const activeHostLink = {
         fontWeight: "bold",
         textDecoration: "underline",
         color: "#161616"
@@ -20,13 +19,13 @@ export default function HostVanDetail() {
     if (!currentVan) {
         return <h1>Loading...</h1>
     }
+
     return (
         <section>
             <Link
                 to=".."
                 relative="path"
-                className="back-button"
-            >&larr; <span>Back to all vans</span></Link>
+            ><button className="back-button">Back to all vans</button></Link>
 
             <div className="host-van-detail-layout-container">
                 <div className="host-van-detail">
@@ -46,19 +45,19 @@ export default function HostVanDetail() {
                     <NavLink
                         to="."
                         end
-                        style={({ isActive }) => isActive ? activeStyles : null}
+                        style={({ isActive }) => isActive ? activeHostLink : null}
                     >
                         Details
                     </NavLink>
                     <NavLink
                         to="pricing"
-                        style={({ isActive }) => isActive ? activeStyles : null}
+                        style={({ isActive }) => isActive ? activeHostLink : null}
                     >
                         Pricing
                     </NavLink>
                     <NavLink
                         to="photos"
-                        style={({ isActive }) => isActive ? activeStyles : null}
+                        style={({ isActive }) => isActive ? activeHostLink : null}
                     >
                         Photos
                     </NavLink>
