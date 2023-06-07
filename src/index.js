@@ -14,7 +14,7 @@ import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
 import Vans, { loader as vansLoader } from './pages/Vans';
-import VanDetail from './pages/VanDetail';
+import VanDetail, {loader as vanDetailLoader} from './pages/VanDetail';
 import Layout from './components/Layout';
 import HostLayout from './components/HostLayout';
 import HostVans from './pages/Host/HostVans';
@@ -28,15 +28,31 @@ import Error from './components/Error';
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout />} errorElement={<Error />}>
-    <Route index element={<Home />} />
-    <Route path='about' element={<About />} />
-    <Route path='login' element={<Login />} />
+    <Route
+      index
+      element={<Home />}
+      loader={async () => {
+        return null
+      }}
+    />
+    <Route
+      path='about'
+      element={<About />}
+    />
+    <Route
+      path='login'
+      element={<Login />}
+    />
     <Route
       path='vans'
       element={<Vans />}
       loader={vansLoader}
     />
-    <Route path='vans/:id' element={<VanDetail />} />
+    <Route
+      path='vans/:id'
+      element={<VanDetail />}
+      loader={vanDetailLoader}
+    />
 
     <Route path='host' element={<HostLayout />}>
       <Route index element={<Dashboard />} />
